@@ -30,6 +30,7 @@ namespace C0731847_C0730406
         {
             MyDelegate myDelegate = new MyDelegate(Method1);
             myDelegate();
+            Console.WriteLine(myDelegate.ToString());
 
         }
     }
