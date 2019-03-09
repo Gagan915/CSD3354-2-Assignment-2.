@@ -11,9 +11,9 @@ namespace C0731847_C0730406 {
  static void Main(string[] args)
     {
         DelegateExercises mg = new DelegateExercises();
-        
 
-            mg.Method2(50);
+            mg.Method2(60);
+         
     }
 }
 public class DelegateExercises
@@ -31,7 +31,7 @@ public class DelegateExercises
     {
         MyDelegate myDelegate = new MyDelegate(Method1);
    
-            myDelegate(50);
+            myDelegate(60);
     }
 }
 }
