@@ -6,30 +6,60 @@ using System.Threading.Tasks;
 
 namespace C0731847_C0730406
 {
-    //Gagandeep Kaur Waraich (C0731847)
-    //Manpreet Kaur (C0730406)
+    using System;
+    delegate void ExampleDelegate(string xyz);
     class Program
     {
-        static void Main(string[] args)
-        {
-            DelegateExercises mg = new DelegateExercises();
+        public static void Method1(string xyz)
 
-            mg.Method3();
-            Console.Read();
-
-        }
-    }
-    public delegate void MyDelegate();
-    public class DelegateExercises
-    {
-        public void Method1()
         {
+
+            Console.WriteLine(xyz + " Method1");
 
         }
-        public void Method3()
+
+        public static void Method2(string xyz)
+
         {
-            MyDelegate myDelegate = new MyDelegate(Method1);
-            System.Console.WriteLine(myDelegate.ToString());
+
+            Console.WriteLine(xyz + " Method2");
+
+        }
+
+        public static void Main()
+
+        {
+
+            ExampleDelegate ex1Delegate, ex2Delegate, ex3Delegate, myDelegate;
+
+            ex1Delegate = new ExampleDelegate(Method1);
+
+            ex2Delegate = new ExampleDelegate(Method2);
+
+            ex3Delegate = ex1Delegate + ex2Delegate;
+
+            myDelegate = ex1Delegate - ex2Delegate;
+
+            ex1Delegate("AAA");
+
+
+
+            ex2Delegate("BBB");
+
+            ex3Delegate("CCC");
+
+            myDelegate("DDD");
+
+            myDelegate = ex3Delegate - ex1Delegate;
+
+            myDelegate("EEE");
+
+            myDelegate = ex3Delegate - ex2Delegate;
+
+            myDelegate("FFF");
+
+            Console.ReadLine();
+
         }
     }
 }
